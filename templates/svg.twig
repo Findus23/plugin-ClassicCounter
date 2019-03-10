@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1"
+     baseProfile="full"
+     viewBox="-1 -1 {{ length*12 }} 20">
+    <title>{{ number }}</title>
+    <style>
+        svg {
+            background-color: black;
+        }
+
+        polygon {
+            fill-opacity: 0.75;
+            fill-rule: evenodd;
+            stroke: black;
+            stroke-width: 0.25;
+            stroke-opacity: 1.0;
+            stroke-linecap: butt;
+            stroke-linejoin: miter;
+        }
+
+        .on {
+            fill: red;
+        }
+
+        use {
+            fill: #222222;
+        }
+    </style>
+    <defs id="defs">
+        <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2"></polygon><!-- top -->
+        <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2"></polygon><!-- right top -->
+        <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10"></polygon><!-- right bottom -->
+        <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16"></polygon><!-- bottom -->
+        <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16"></polygon><!-- left bottom -->
+        <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8"></polygon><!-- left top -->
+        <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10"></polygon><!-- center -->
+
+    </defs>
+    {% for digit in digits %}
+        <g transform="translate({{ loop.index0*12 }},0)">
+            <use xlink:href="#a"{{ digit[0] ? " class=\"on\"":"" }}/>
+            <use xlink:href="#b"{{ digit[1] ? " class=\"on\"":"" }}/>
+            <use xlink:href="#c"{{ digit[2] ? " class=\"on\"":"" }}/>
+            <use xlink:href="#d"{{ digit[3] ? " class=\"on\"":"" }}/>
+            <use xlink:href="#e"{{ digit[4] ? " class=\"on\"":"" }}/>
+            <use xlink:href="#f"{{ digit[5] ? " class=\"on\"":"" }}/>
+            <use xlink:href="#g"{{ digit[6] ? " class=\"on\"":"" }}/>
+        </g>
+    {% endfor %}
+</svg>

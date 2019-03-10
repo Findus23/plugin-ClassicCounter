@@ -1,0 +1,27 @@
+{
+  "name": "ClassicCounter",
+  "description": "Embed a view counter in the style of classic CGI scripts into your website",
+  "version": "0.1.0",
+  "theme": false,
+  "require": {
+    "piwik": ">=3.8.0,<4.0.0-b1"
+  },
+  "authors": [
+    {
+      "name": "Lukas Winkler",
+      "email": "lukas@matomo.org",
+      "homepage": "https://lw1.at"
+    }
+  ],
+  "support": {
+    "email": "lukas@matomo.org",
+    "issues": "https://github.com/Findus23/plugin-ClassicCounter/issues",
+    "forum": "https://forum.matomo.org",
+    "source": "https://github.com/Findus23/plugin-ClassicCounter"
+  },
+  "homepage": "https://lw1.at",
+  "license": "GPL v3+",
+  "keywords": [
+    "nostalgia"
+  ]
+}

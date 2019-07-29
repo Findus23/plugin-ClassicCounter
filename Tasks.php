@@ -25,9 +25,9 @@ class Tasks extends \Piwik\Plugin\Tasks
 
         $siteIds = SitesManagerApi::getInstance()->getAllSitesId();
         foreach ($siteIds as $idSite) {
-            $cacheKey = "ClassicCounter_Visits_" . $idSite;
+            $cacheKey = "ClassicCounter_Data_" . $idSite;
 
-            $visitCount = ClassicCounter::getVisitorCount($idSite);
+            $visitCount = ClassicCounter::getVisitorData($idSite);
             $cache->save($cacheKey, $visitCount, 60);
 
         }

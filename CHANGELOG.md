@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.2
+
+another bugfix (increase version in plugin.json)
+
 ### 0.2.1
 
 quick bugfix (task)

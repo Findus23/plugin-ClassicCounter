@@ -12,15 +12,15 @@ use Piwik\Access;
 
 class ClassicCounter extends \Piwik\Plugin
 {
-    public static function getVisitorCount($idSite) {
+    public static function getVisitorData($idSite) {
         $visitsCount = Access::getInstance()->doAsSuperUser(function () use ($idSite) {
-            return \Piwik\API\Request::processRequest('VisitsSummary.getVisits', array(
+            return \Piwik\API\Request::processRequest('VisitsSummary.get', array(
                 'idSite' => $idSite,
                 'period' => "range",
                 'date' => "2000-01-01,2030-01-01",
-            ))->getFirstRow()["nb_visits"];
+            ))->getFirstRow()->export()[0];
         });
-        return (int)$visitsCount;
+        return $visitsCount;
     }
 
 }

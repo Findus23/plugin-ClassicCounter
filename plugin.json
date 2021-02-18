@@ -1,7 +1,7 @@
 {
   "name": "ClassicCounter",
   "description": "Embed a view counter in the style of classic CGI scripts into your website",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "theme": false,
   "require": {
     "matomo": ">=4.0.0-b1,<5.0.0-b1"

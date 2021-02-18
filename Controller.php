@@ -43,6 +43,7 @@ class Controller extends \Piwik\Plugin\Controller
             "foregroundColor" => Common::getRequestVar('foregroundColor', "f00", 'string'),
             "lightColor" => Common::getRequestVar('lightColor', "222", 'string'),
         ];
+        $historicValue = Common::getRequestVar('historicValue', 0, 'int');
         try {
             if (!in_array($mode, $this->modes)) {
                 $modestring = implode(", ", $this->modes);
@@ -67,7 +68,7 @@ class Controller extends \Piwik\Plugin\Controller
                 $cache->save($cacheKey, $visitData, 60);
             }
             $text = $visitData[$mode];
-            $text = (int)$text;
+            $text = (int)$text + $historicValue;
             $errorMessage = false;
         } catch (\Exception $e) {
             $text = "Error";

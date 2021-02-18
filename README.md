@@ -18,4 +18,4 @@ This plugin allows you to add an image showing the total amount of visits per `i
 - `foregroundColor`
 - `lightColor`
 
-<img src="./screenshots/4909.png" height="80">
+<img src="https://github.com/Findus23/plugin-ClassicCounter/blob/4.x-dev/screenshots/4909.png?raw=true" height="80">

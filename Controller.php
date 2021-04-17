@@ -61,7 +61,7 @@ class Controller extends \Piwik\Plugin\Controller
             }
             $cache = Cache::getLazyCache();
             $cacheKey = "ClassicCounter_Data_" . $idSite;
-            if ($cache->contains($cacheKey) && false) {
+            if ($cache->contains($cacheKey)) {
                 $visitData = $cache->fetch($cacheKey);
             } else {
                 $visitData = ClassicCounter::getVisitorData($idSite);

@@ -36,14 +36,15 @@ class Controller extends \Piwik\Plugin\Controller
     private $colorRegex = '/^(?:[0-9a-fA-F]{3}){1,2}$/m';
 
     public function svg() {
-        $idSite = Common::getRequestVar('idSite', $this->idSite, 'int');
-        $mode = Common::getRequestVar('mode', "nb_visits", 'string');
+        $request = \Piwik\Request::fromRequest();
+        $idSite = $request->getIntegerParameter('idSite', $this->idSite);
+        $mode = $request->getStringParameter('mode', "nb_visits");
         $colors = [
-            "backgroundColor" => Common::getRequestVar('backgroundColor', "000", 'string'),
-            "foregroundColor" => Common::getRequestVar('foregroundColor', "f00", 'string'),
-            "lightColor" => Common::getRequestVar('lightColor', "222", 'string'),
+            "backgroundColor" => $request->getStringParameter('backgroundColor', "000"),
+            "foregroundColor" => $request->getStringParameter('foregroundColor', "f00"),
+            "lightColor" => $request->getStringParameter('lightColor', "222"),
         ];
-        $historicValue = Common::getRequestVar('historicValue', 0, 'int');
+        $historicValue = $request->getIntegerParameter('historicValue', 0);
         try {
             if (!in_array($mode, $this->modes)) {
                 $modestring = implode(", ", $this->modes);

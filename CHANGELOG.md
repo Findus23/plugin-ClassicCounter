@@ -1,5 +1,8 @@
 ## Changelog
 
+### 0.4.0 
+
+Matomo 5 compatibility
 ### 0.3.0 
 
 Matomo 4 compatibility
